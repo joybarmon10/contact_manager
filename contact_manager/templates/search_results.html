@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Results</title>
+</head>
+
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for contact in contacts %}
+        <li><a href="{% url 'contact_detail' contact.id %}">{{ contact.first_name }} - {{ contact.email }} - {{
+                contact.phone_number }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to List</a>
+</body>
+
+</html>
